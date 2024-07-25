@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
 
   return (
     <Container maxWidth="lg">
-      <AppBar position="static" sx={{ backgroundColor: 'black', mb: 4 }}>
+      <AppBar position="static" sx={{ backgroundColor: 'black', mb: 4,borderRadius: '10px' }}>
         <Toolbar style={{ justifyContent: 'center', gap: '30px' }}>
           {['Appetizers', 'Bread & Cakes', 'Dessert', 'Drinks', 'Entrees', 'Sauces', 'Side Dishes', 'Soup', 'Vegetarian'].map((item, index) => (
             <Button key={index} color="inherit">{item}</Button>
