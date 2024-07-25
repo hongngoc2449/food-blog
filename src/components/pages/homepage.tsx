@@ -19,7 +19,7 @@ import imageList from '../pageStyle/homepageImage';
 
 const HomePage: React.FC = () => {
   const handleCardClick = () => {
-    window.location.href = '/food'; 
+    window.location.href = '/food-blog/food'; 
   };
 
   return (

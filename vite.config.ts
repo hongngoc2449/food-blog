@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [react()
     
   ],
-  // base: '/food-blog/',
+  base: '/food-blog/',
 })

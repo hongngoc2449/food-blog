@@ -27,7 +27,7 @@ const ErrorPage: React.FC = () => {
         <Box sx={{ mt: 4 }}>
           <Button
             component={Link}
-            to="/"
+            to="/food-blog"
             variant="contained"
             color="primary"
             size="large"

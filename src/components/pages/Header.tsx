@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const handleTitleClick = () => {
-    navigate('/');
+    navigate('/food-blog');
   };
 
   return (
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
         <Button 
           color="inherit" 
           component={Link} 
-          to="/" 
+          to="/food-blog" 
           style={{ fontFamily: 'Oxygen', color: 'black' }}
         >
           Home

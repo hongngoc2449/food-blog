@@ -16,15 +16,15 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
+          <Route path="food-blog" element={<HomePage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="*" element={<ErrorPage />} />
-          <Route path="food" element={<FoodPage />} />
+          <Route path="food-blog/food" element={<FoodPage />} />
           <Route path="forgot-password" element={<ForgotPassPage />} />
-          <Route path="post" element={<SinglePostPage />} />
+          <Route path="food-blog/post" element={<SinglePostPage />} />
         </Route>
       </Routes>
     </Router>
