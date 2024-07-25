@@ -52,7 +52,7 @@ const Header: React.FC = () => {
         <Button 
           color="inherit" 
           component={Link} 
-          to="/blog" 
+          to="/food-blog/blog" 
           style={{ fontFamily: 'Oxygen', color: 'black' }}
         >
           Blog Post
