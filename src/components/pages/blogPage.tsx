@@ -8,7 +8,6 @@ import {
   CardContent,
   CardMedia,
   Divider,
-  Link,
 } from '@mui/material';
 import blogpageImage from '../pageStyle/blogpageImage'; 
 import blogpageThumbnail from '../../assets/blogpageThumbNail.svg';
