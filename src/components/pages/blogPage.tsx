@@ -12,25 +12,24 @@ import {
 } from '@mui/material';
 import blogpageImage from '../pageStyle/blogpageImage'; 
 import blogpageThumbnail from '../../assets/blogpageThumbNail.svg';
-
 const BlogPage: React.FC = () => {
   const articles = [
-    { title: 'Here are some things you should know regarding how we work', img: blogpageImage[0], link: '/food-page/post' },
-    { title: 'Granny gives everyone the finger, and other tips from OFFF Barcelona', img: blogpageImage[1], link: '/food-page/post' },
+    { title: 'Here are some things you should know regarding', img: blogpageImage[0], link: '/food-page/post' },
+    { title: 'Granny gives everyone the finger, and other tips from', img: blogpageImage[1], link: '/food-page/post' },
     { title: 'Hello world, or, in other words, why this blog exists', img: blogpageImage[2], link: '/food-page/post' },
-    { title: 'Here are some things you should know regarding how we work', img: blogpageImage[3], link: '/food-page/post' },
-    { title: 'Connecting artificial intelligence with digital product design', img: blogpageImage[4], link: '/food-page/post' },
+    { title: 'Here are some things you should know regarding', img: blogpageImage[3], link: '/food-page/post' },
+    { title: 'Connecting artificial intelligence', img: blogpageImage[4], link: '/food-page/post' },
     { title: 'It’s all about finding the perfect balance', img: blogpageImage[5], link: '/food-page/post' },
     { title: 'I believe learning is the most important skill', img: blogpageImage[6], link: '/food-page/post' },
     { title: 'Clients are part of the team', img: blogpageImage[7], link: '/food-page/post' },
     { title: 'Clients are part of the team', img: blogpageImage[8], link: '/food-page/post' },
-    { title: 'Here are some things you should know regarding how we work', img: blogpageImage[9], link: '/food-page/post' },
+    { title: 'Here are some things you should know', img: blogpageImage[9], link: '/food-page/post' },
     { title: 'Connecting artificial intelligence with digital product design', img: blogpageImage[10], link: '/food-page/post' },
-    { title: 'How modern remote working tools get along with Old School Cowboy', img: blogpageImage[11], link: '/food-page/post' },
+    { title: 'How modern remote working tools', img: blogpageImage[11], link: '/food-page/post' },
   ];
 
   const handleCardClick = (link: string) => {
-    window.location.href = link; // Chuyển hướng đến đường dẫn đã cung cấp
+    window.location.href = link;
   };
 
   return (
@@ -81,9 +80,7 @@ const BlogPage: React.FC = () => {
                 <Typography variant="body2" gutterBottom>
                   {article.title}
                 </Typography>
-                <Link href={article.link} variant="body2" color="primary">
-                  Read more
-                </Link>
+                <span style={{ color: 'black',fontStyle:'italic' }}>Read more</span>
               </CardContent>
             </Card>
           </Grid>

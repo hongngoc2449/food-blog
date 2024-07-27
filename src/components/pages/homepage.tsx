@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -18,13 +19,22 @@ import { ArrowForward } from '@mui/icons-material';
 import imageList from '../pageStyle/homepageImage';
 
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+
+  // Function to handle navigation with scroll to top
   const handleCardClick = () => {
+    window.scrollTo(0, 0); // Scroll to the top
     window.location.href = '/food-blog/food'; 
+  };
+
+  const handleNavigate = () => {
+    window.scrollTo(0, 0); // Scroll to the top
+    navigate('/food-blog/post');
   };
 
   return (
     <Container maxWidth="lg">
-      <AppBar position="static" sx={{ backgroundColor: 'black', mb: 4,borderRadius: '10px' }}>
+      <AppBar position="static" sx={{ backgroundColor: 'black', mb: 4, borderRadius: '10px' }}>
         <Toolbar style={{ justifyContent: 'center', gap: '30px' }}>
           {['Appetizers', 'Bread & Cakes', 'Dessert', 'Drinks', 'Entrees', 'Sauces', 'Side Dishes', 'Soup', 'Vegetarian'].map((item, index) => (
             <Button key={index} color="inherit">{item}</Button>
@@ -95,7 +105,6 @@ const HomePage: React.FC = () => {
         Blog Posts
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-        <Typography variant="h6">Blog Posts</Typography>
         <Link href="#" underline="hover">
           More
         </Link>
@@ -104,12 +113,15 @@ const HomePage: React.FC = () => {
       <Grid container spacing={4}>
         {[...Array(2)].map((_, index) => (
           <Grid item xs={12} md={6} key={index}>
-            <Card>
+            <Card
+              onClick={handleNavigate}
+              sx={{ cursor: 'pointer' }} // Add pointer cursor to indicate clickability
+            >
               <CardMedia
                 component="img"
                 alt={`Blog Post ${index + 1}`}
                 height="140"
-                image={imageList[index % imageList.length]} 
+                image={imageList[index % imageList.length]}
               />
               <CardContent>
                 <Typography variant="h5" component="div">
@@ -119,37 +131,23 @@ const HomePage: React.FC = () => {
                   Author: Jane Doe
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {`Posted ${Math.floor(Math.random() * 60)} minutes ago`} 
+                  {`Posted ${Math.floor(Math.random() * 60)} minutes ago`}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
                 </Typography>
               </CardContent>
-
               <CardActions>
-                <Button size="small" endIcon={<ArrowForward />}>Read More</Button>
+                <Button size="small" endIcon={<ArrowForward />} onClick={handleNavigate}>
+                  Read More
+                </Button>
               </CardActions>
             </Card>
           </Grid>
         ))}
       </Grid>
-
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h6" gutterBottom>
-          Oven Temperatures in
-        </Typography>
-        <Grid container spacing={4}>
-          {[...Array(2)].map((_, index) => (
-            <Grid item xs={12} md={6} key={index}>
-              <Paper sx={{ p: 2 }}>
-                <Typography variant="body2">
-                  Temp Content Here...
-                </Typography>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
     </Container>
   );
 };
